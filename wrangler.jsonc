@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "grantcrafter-landing",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-21",
+  "routes": [
+    { "pattern": "grantcrafter.org/*", "zone_name": "grantcrafter.org" },
+    { "pattern": "www.grantcrafter.org/*", "zone_name": "grantcrafter.org" }
+  ],
+  "assets": { "directory": "public", "binding": "ASSETS", "not_found_handling": "single-page-application" }
+}

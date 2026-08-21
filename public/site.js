@@ -1,0 +1,1 @@
+const root=document.documentElement;const saved=localStorage.getItem('theme');if(saved==='dark'||(!saved&&matchMedia('(prefers-color-scheme:dark)').matches))root.classList.add('dark');document.addEventListener('click',e=>{if(e.target.closest('[data-theme]')){root.classList.toggle('dark');localStorage.setItem('theme',root.classList.contains('dark')?'dark':'light')}});
