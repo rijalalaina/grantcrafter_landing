@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "grantcrafter-landing",
+  // Plain static files, no build step. Pages reads this field and serves
+  // `public/` as-is, which is also why the build command must be empty:
+  // a non-empty one is what failed every git build before this commit.
+  "pages_build_output_dir": "public"
+}
