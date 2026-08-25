@@ -39,16 +39,35 @@ with `file://` will not resolve them — use a server.
 
 ## Deploying
 
-Cloudflare Pages, connected to this repository. `wrangler.jsonc` declares
-`public/` as the output directory, so the project needs **no build command**
-— a non-empty one is what failed every build before the site was committed
-here.
+Cloudflare Pages project `grantcrafter-landing`, connected to this
+repository.
 
-| Setting          | Value    |
-| ---------------- | -------- |
+**The dashboard's build settings are authoritative.** `wrangler.toml` declares
+`pages_build_output_dir = "public"`, but a git build ignored it and published
+an empty deployment — succeeding while serving 404 for every page. Until the
+dashboard matches, git builds will keep doing that.
+
+Set these under Settings → Builds & deployments:
+
+| Setting          | Value     |
+| ---------------- | --------- |
 | Build command    | *(empty)* |
-| Output directory | `public` |
-| Root directory   | `/`      |
+| Output directory | `public`  |
+| Root directory   | `/`       |
+
+Until then, deploy by direct upload, which does not use the build settings at
+all:
+
+```bash
+npx wrangler pages deploy public --project-name grantcrafter-landing --branch main
+```
+
+Verify a deployment before trusting it. An empty publish returns 200 on `/`
+because Pages serves its own fallback, so check a real page:
+
+```bash
+curl -sL -o /dev/null -w '%{http_code}\n' https://grantcrafter.org/pricing/
+```
 
 ## Keeping claims true
 
