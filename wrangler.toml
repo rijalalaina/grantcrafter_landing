@@ -1,0 +1,11 @@
+# Cloudflare Pages configuration.
+#
+# `pages_build_output_dir` is what tells Pages which directory to publish.
+# Without it the project falls back to the dashboard setting, which pointed at
+# a directory that does not exist here — the build then "succeeds" and uploads
+# an empty deployment, which is worse than failing.
+#
+# TOML rather than JSONC deliberately: Pages reads this filename first.
+name = "grantcrafter-landing"
+pages_build_output_dir = "public"
+compatibility_date = "2026-08-25"
