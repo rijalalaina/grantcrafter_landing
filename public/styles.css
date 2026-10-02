@@ -4,3 +4,15 @@
    for a team larger than the plan. Narrower than the hero, so they wrap. */
 .plan-actions{margin:18px 0 0}
 .plan-actions .btn{flex:1 1 auto;text-align:center}
+
+/* Blissfulplan ecosystem: other products and social profiles (footer). */
+.eco{display:grid;grid-template-columns:1fr auto;gap:30px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.eco-title{margin:0 0 10px;font-size:13px;font-weight:700;color:var(--text)}
+.eco-links{display:flex;flex-wrap:wrap;gap:8px 20px}
+.eco-links a{font-size:14px;color:var(--muted);text-decoration:none}
+.eco-links a:hover,.eco-social a:hover{color:var(--primary)}
+.eco-links .eco-all{flex-basis:100%;font-size:13px}
+.eco-social{display:flex;flex-wrap:wrap;gap:8px}
+.eco-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;color:var(--muted)}
+.eco-social svg{width:16px;height:16px;fill:currentColor}
+@media (max-width:760px){.eco{grid-template-columns:1fr}}
